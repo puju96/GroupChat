@@ -16,7 +16,15 @@ class AuthVC: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    @IBAction func signInWithEmailTapped(_ sender: Any) {
+        let loginVC = storyboard?.instantiateViewController(withIdentifier: "LoginVC")
+        present(loginVC!, animated: true, completion: nil)
+    }
+    
 
-
-
+    @IBAction func signInWithFBTapped(_ sender: Any) {
+    }
+    
+    @IBAction func signInWithGoogleTapped(_ sender: Any) {
+    }
 }

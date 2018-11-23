@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="PXf-6F-2Na">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -133,6 +133,9 @@
                                                 <state key="normal" title="Login With FB">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="signInWithFBTapped:" destination="PXf-6F-2Na" eventType="touchUpInside" id="xbL-dJ-Aaq"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1NN-WM-MIj">
                                                 <rect key="frame" x="0.0" y="115" width="230" height="45"/>
@@ -144,6 +147,9 @@
                                                 <state key="normal" title="Login With G+">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="signInWithGoogleTapped:" destination="PXf-6F-2Na" eventType="touchUpInside" id="L9x-de-huP"/>
+                                                </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OR" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ds7-5w-vNe">
                                                 <rect key="frame" x="0.0" y="180" width="230" height="26.5"/>
@@ -156,6 +162,9 @@
                                                 <state key="normal" title="  Login by Mail" image="emailIcon">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="signInWithEmailTapped:" destination="PXf-6F-2Na" eventType="touchUpInside" id="tM2-mw-fO0"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -184,12 +193,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SWB-Cp-2af" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1892" y="881.10944527736137"/>
+            <point key="canvasLocation" x="-1730" y="860"/>
         </scene>
         <!--LoginVC-->
         <scene sceneID="P0m-so-r5E">
             <objects>
-                <viewController id="Pgx-tw-QF0" customClass="LoginVC" customModule="groupChat" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginVC" id="Pgx-tw-QF0" customClass="LoginVC" customModule="groupChat" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="w8o-rd-eUN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -197,6 +206,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6j0-Jb-spT">
                                 <rect key="frame" x="16" y="20" width="21" height="22"/>
                                 <state key="normal" image="close"/>
+                                <connections>
+                                    <action selector="closeBtnTapped:" destination="Pgx-tw-QF0" eventType="touchUpInside" id="Daw-Ye-dk7"/>
+                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="bwj-uG-0Zr">
                                 <rect key="frame" x="47.5" y="75" width="280" height="167.5"/>
@@ -230,7 +242,7 @@
                                         </constraints>
                                         <color key="textColor" red="0.059712823540000001" green="0.58098810720000005" blue="0.089831670729999993" alpha="0.89124036819999997" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
                                 </subviews>
                             </stackView>
@@ -245,6 +257,9 @@
                                 <state key="normal" title="Sign In">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="signInBtnTapped:" destination="Pgx-tw-QF0" eventType="touchUpInside" id="d2O-ao-HkN"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
@@ -258,6 +273,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="SC2-mx-Cnc"/>
                     </view>
+                    <connections>
+                        <outlet property="emailTxt" destination="ndc-rK-cRM" id="cRA-FN-tq3"/>
+                        <outlet property="passwdTxt" destination="Pi8-dV-lA0" id="YA4-x0-8HF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ADp-ak-c44" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
