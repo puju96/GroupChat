@@ -15,6 +15,10 @@
 		18CBE4D621A6C8CF006C67CD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18CBE4D421A6C8CF006C67CD /* LaunchScreen.storyboard */; };
 		18CBE4DE21A6CC40006C67CD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 18CBE4DD21A6CC40006C67CD /* GoogleService-Info.plist */; };
 		18CBE4E521A6CC92006C67CD /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CBE4E421A6CC92006C67CD /* DataService.swift */; };
+		18CBE4E721A7CA5B006C67CD /* AuthVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CBE4E621A7CA5B006C67CD /* AuthVC.swift */; };
+		18CBE4E921A7CA6F006C67CD /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CBE4E821A7CA6F006C67CD /* LoginVC.swift */; };
+		18CBE4EB21A7CC4E006C67CD /* insetTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CBE4EA21A7CC4E006C67CD /* insetTextField.swift */; };
+		18CBE4ED21A7CC73006C67CD /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CBE4EC21A7CC73006C67CD /* ShadowView.swift */; };
 		7CE815B82BD87D673FC8B796 /* Pods_groupChat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B20C744E82F95E5DAC447E76 /* Pods_groupChat.framework */; };
 /* End PBXBuildFile section */
 
@@ -29,6 +33,10 @@
 		18CBE4D721A6C8CF006C67CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		18CBE4DD21A6CC40006C67CD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		18CBE4E421A6CC92006C67CD /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
+		18CBE4E621A7CA5B006C67CD /* AuthVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthVC.swift; sourceTree = "<group>"; };
+		18CBE4E821A7CA6F006C67CD /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		18CBE4EA21A7CC4E006C67CD /* insetTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = insetTextField.swift; sourceTree = "<group>"; };
+		18CBE4EC21A7CC73006C67CD /* ShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowView.swift; sourceTree = "<group>"; };
 		32BE7D52A8F26C3D0644F59B /* Pods-groupChat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-groupChat.debug.xcconfig"; path = "Pods/Target Support Files/Pods-groupChat/Pods-groupChat.debug.xcconfig"; sourceTree = "<group>"; };
 		B20C744E82F95E5DAC447E76 /* Pods_groupChat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_groupChat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B911D368F6E2A9E2440DDCD4 /* Pods-groupChat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-groupChat.release.xcconfig"; path = "Pods/Target Support Files/Pods-groupChat/Pods-groupChat.release.xcconfig"; sourceTree = "<group>"; };
@@ -87,6 +95,8 @@
 		18CBE4DF21A6CC56006C67CD /* controller */ = {
 			isa = PBXGroup;
 			children = (
+				18CBE4E621A7CA5B006C67CD /* AuthVC.swift */,
+				18CBE4E821A7CA6F006C67CD /* LoginVC.swift */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -101,6 +111,8 @@
 		18CBE4E121A6CC68006C67CD /* views */ = {
 			isa = PBXGroup;
 			children = (
+				18CBE4EA21A7CC4E006C67CD /* insetTextField.swift */,
+				18CBE4EC21A7CC73006C67CD /* ShadowView.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -256,7 +268,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18CBE4E721A7CA5B006C67CD /* AuthVC.swift in Sources */,
+				18CBE4EB21A7CC4E006C67CD /* insetTextField.swift in Sources */,
 				18CBE4CE21A6C8CD006C67CD /* SecondViewController.swift in Sources */,
+				18CBE4E921A7CA6F006C67CD /* LoginVC.swift in Sources */,
+				18CBE4ED21A7CC73006C67CD /* ShadowView.swift in Sources */,
 				18CBE4CA21A6C8CD006C67CD /* AppDelegate.swift in Sources */,
 				18CBE4CC21A6C8CD006C67CD /* FirstViewController.swift in Sources */,
 				18CBE4E521A6CC92006C67CD /* DataService.swift in Sources */,
