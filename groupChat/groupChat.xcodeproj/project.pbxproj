@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		18CBE4CA21A6C8CD006C67CD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CBE4C921A6C8CD006C67CD /* AppDelegate.swift */; };
-		18CBE4CC21A6C8CD006C67CD /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CBE4CB21A6C8CD006C67CD /* FirstViewController.swift */; };
-		18CBE4CE21A6C8CD006C67CD /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CBE4CD21A6C8CD006C67CD /* SecondViewController.swift */; };
+		18CBE4CC21A6C8CD006C67CD /* FeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CBE4CB21A6C8CD006C67CD /* FeedVC.swift */; };
+		18CBE4CE21A6C8CD006C67CD /* GroupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CBE4CD21A6C8CD006C67CD /* GroupVC.swift */; };
 		18CBE4D121A6C8CD006C67CD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18CBE4CF21A6C8CD006C67CD /* Main.storyboard */; };
 		18CBE4D321A6C8CF006C67CD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18CBE4D221A6C8CF006C67CD /* Assets.xcassets */; };
 		18CBE4D621A6C8CF006C67CD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18CBE4D421A6C8CF006C67CD /* LaunchScreen.storyboard */; };
@@ -27,8 +27,8 @@
 /* Begin PBXFileReference section */
 		18CBE4C621A6C8CD006C67CD /* groupChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = groupChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18CBE4C921A6C8CD006C67CD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		18CBE4CB21A6C8CD006C67CD /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		18CBE4CD21A6C8CD006C67CD /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		18CBE4CB21A6C8CD006C67CD /* FeedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedVC.swift; sourceTree = "<group>"; };
+		18CBE4CD21A6C8CD006C67CD /* GroupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupVC.swift; sourceTree = "<group>"; };
 		18CBE4D021A6C8CD006C67CD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		18CBE4D221A6C8CF006C67CD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		18CBE4D521A6C8CF006C67CD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -85,8 +85,6 @@
 				18CBE4E021A6CC61006C67CD /* models */,
 				18CBE4DF21A6CC56006C67CD /* controller */,
 				18CBE4C921A6C8CD006C67CD /* AppDelegate.swift */,
-				18CBE4CB21A6C8CD006C67CD /* FirstViewController.swift */,
-				18CBE4CD21A6C8CD006C67CD /* SecondViewController.swift */,
 				18CBE4CF21A6C8CD006C67CD /* Main.storyboard */,
 				18CBE4D221A6C8CF006C67CD /* Assets.xcassets */,
 				18CBE4D421A6C8CF006C67CD /* LaunchScreen.storyboard */,
@@ -99,6 +97,8 @@
 		18CBE4DF21A6CC56006C67CD /* controller */ = {
 			isa = PBXGroup;
 			children = (
+				18CBE4CD21A6C8CD006C67CD /* GroupVC.swift */,
+				18CBE4CB21A6C8CD006C67CD /* FeedVC.swift */,
 				18CBE4E621A7CA5B006C67CD /* AuthVC.swift */,
 				18CBE4E821A7CA6F006C67CD /* LoginVC.swift */,
 			);
@@ -276,13 +276,13 @@
 			files = (
 				18CBE4E721A7CA5B006C67CD /* AuthVC.swift in Sources */,
 				18CBE4EB21A7CC4E006C67CD /* insetTextField.swift in Sources */,
-				18CBE4CE21A6C8CD006C67CD /* SecondViewController.swift in Sources */,
+				18CBE4CE21A6C8CD006C67CD /* GroupVC.swift in Sources */,
 				18CBE4EF21A7DB42006C67CD /* AuthService.swift in Sources */,
 				18CBE4E921A7CA6F006C67CD /* LoginVC.swift in Sources */,
 				18CBE4F121A7EF42006C67CD /* extensions.swift in Sources */,
 				18CBE4ED21A7CC73006C67CD /* ShadowView.swift in Sources */,
 				18CBE4CA21A6C8CD006C67CD /* AppDelegate.swift in Sources */,
-				18CBE4CC21A6C8CD006C67CD /* FirstViewController.swift in Sources */,
+				18CBE4CC21A6C8CD006C67CD /* FeedVC.swift in Sources */,
 				18CBE4E521A6CC92006C67CD /* DataService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
