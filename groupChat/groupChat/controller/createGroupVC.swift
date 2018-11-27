@@ -19,6 +19,8 @@ class createGroupVC: UIViewController {
     @IBOutlet weak var memberEmailTxt: insetTextField!
     
     var emailArray = [String]()
+    var membersArray = [String]()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +28,10 @@ class createGroupVC: UIViewController {
         tableView.dataSource = self
         memberEmailTxt.delegate = self
         memberEmailTxt.addTarget(self, action: #selector(textFieldChanged), for: .editingChanged)
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        doneBtn.isHidden = true
     }
     
     @objc func textFieldChanged (){
@@ -68,6 +74,23 @@ extension createGroupVC : UITableViewDelegate , UITableViewDataSource {
         let profileimage = UIImage(named: "defaultProfileImage")
         cell.configureCell(ProfileImg: profileimage!, email: emailArray[indexPath.row], isSelected: true)
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let cell = tableView.cellForRow(at: indexPath) as? userCell else { return }
+        if !membersArray.contains(cell.emailLbl.text!) {
+            membersArray.append(cell.emailLbl.text!)
+            groupMembers.text = membersArray.joined(separator: ",")
+            doneBtn.isHidden = false
+        }else{
+            membersArray = membersArray.filter({ $0 != cell.emailLbl.text!})
+            if membersArray.count >= 1 {
+                groupMembers.text = membersArray.joined(separator: ",")
+            }else{
+                groupMembers.text = "Add group members"
+                doneBtn.isHidden = true
+            }
+        }
     }
     
     
