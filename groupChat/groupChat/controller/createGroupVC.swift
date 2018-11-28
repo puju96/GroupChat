@@ -55,6 +55,21 @@ class createGroupVC: UIViewController {
     }
     
     @IBAction func doneBtnTapped(_ sender: Any) {
+        if titleTxt.text != "" && descTxt.text != "" {
+            DataService.instance.getIds(forusername: membersArray) { (returnedIds) in
+                var memberIds = returnedIds
+                memberIds.append((Auth.auth().currentUser?.uid)!)
+                DataService.instance.createGroup(withTitle: self.titleTxt.text!, andDescription: self.descTxt.text!, forUserIds: memberIds, CreateGroup: { (success) in
+                    if success {
+                    self.dismiss(animated: true, completion: nil)
+                    }
+                    else {
+                        print("could not create new group")
+                    }
+                })
+            }
+           
+        }
     }
     
 }
