@@ -8,10 +8,14 @@
 
 import UIKit
 import Firebase
-class AuthVC: UIViewController {
+import GoogleSignIn
+
+class AuthVC: UIViewController , GIDSignInUIDelegate{
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        GIDSignIn.sharedInstance().uiDelegate = self
+     
 
         // Do any additional setup after loading the view.
     }
@@ -32,5 +36,10 @@ class AuthVC: UIViewController {
     }
     
     @IBAction func signInWithGoogleTapped(_ sender: Any) {
+//
+        let googleSignInButton = GIDSignInButton()
+        googleSignInButton.frame = CGRect(x: 120, y: 200, width: view.frame.width - 240, height: 50)
+        view.addSubview(googleSignInButton)
+        
     }
 }

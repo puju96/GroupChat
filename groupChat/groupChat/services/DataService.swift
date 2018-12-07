@@ -33,6 +33,35 @@ class DataService {
         return REF_GROUPS
     }
     
+    // profile image uploading
+    
+    private let profileImageList = [
+        profileImage(imagename: "img1"),
+        profileImage(imagename: "img2"),
+        profileImage(imagename: "img3"),
+        profileImage(imagename: "img4"),
+        profileImage(imagename: "img5"),
+        profileImage(imagename: "img6"),
+        profileImage(imagename: "img7"),
+        profileImage(imagename: "img8"),
+        profileImage(imagename: "img9") ]
+    
+    private var selectedProfile = "defaultProfileImage"
+    
+    func loadProfileImages() -> [profileImage] {
+       return profileImageList
+    }
+    
+    func setProfileName (profileName : String) {
+        self.selectedProfile = profileName
+    }
+    
+    func getProfileImage() -> String {
+        return selectedProfile
+    }
+    
+     // firebase dataservice
+    
     func createUserDB(uid:String , userData: Dictionary<String,Any>) {
         ref_users.child(uid).updateChildValues(userData)
     }
@@ -78,6 +107,27 @@ class DataService {
             handler(msgArray)
         }
     }
+    
+    func getAllMsgsOfCurrentUser(senderId: String , handler: @escaping (_ msgArray : [Message]) ->()) {
+        
+        var msgArray = [Message]()
+        ref_feed.observeSingleEvent(of: .value) { (feedsnapShot) in
+            guard let feedsnapShot = feedsnapShot.children.allObjects as? [DataSnapshot] else
+            { return }
+            
+        for message in feedsnapShot {
+            let senderID = message.childSnapshot(forPath: "User").value as! String
+            if senderID == senderId {
+                let content = message.childSnapshot(forPath: "content").value as! String
+                let message = Message(content: content, senderId: senderID)
+                msgArray.append(message)
+            }
+        }
+            handler(msgArray)
+        
+        }
+    }
+    
     
     func getMsgOfDesiredGroup(desiredGrp : Group , handler: @escaping (_ msgArray: [Message]) ->()) {
         var msgArray = [Message]()
@@ -176,5 +226,14 @@ class DataService {
         
     }
     
-}
+   
+    
+//    func uploadProfileImages() ->  [UIImage]{
+//
+//
+//    }
+    
+    
 
+
+}

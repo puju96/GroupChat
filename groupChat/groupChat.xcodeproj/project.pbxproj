@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		187A1E6321B1144200865ABC /* meCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187A1E6221B1144200865ABC /* meCell.swift */; };
+		187A1E6521B1389800865ABC /* imageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187A1E6421B1389800865ABC /* imageCell.swift */; };
+		187A1E6721B138C300865ABC /* profileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187A1E6621B138C300865ABC /* profileVC.swift */; };
+		187A1E6921B14E3D00865ABC /* profileImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187A1E6821B14E3D00865ABC /* profileImage.swift */; };
 		18CBE4CA21A6C8CD006C67CD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CBE4C921A6C8CD006C67CD /* AppDelegate.swift */; };
 		18CBE4CC21A6C8CD006C67CD /* FeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CBE4CB21A6C8CD006C67CD /* FeedVC.swift */; };
 		18CBE4CE21A6C8CD006C67CD /* GroupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CBE4CD21A6C8CD006C67CD /* GroupVC.swift */; };
@@ -36,6 +40,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		187A1E6221B1144200865ABC /* meCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = meCell.swift; sourceTree = "<group>"; };
+		187A1E6421B1389800865ABC /* imageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = imageCell.swift; sourceTree = "<group>"; };
+		187A1E6621B138C300865ABC /* profileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = profileVC.swift; sourceTree = "<group>"; };
+		187A1E6821B14E3D00865ABC /* profileImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = profileImage.swift; sourceTree = "<group>"; };
 		18CBE4C621A6C8CD006C67CD /* groupChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = groupChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18CBE4C921A6C8CD006C67CD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		18CBE4CB21A6C8CD006C67CD /* FeedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedVC.swift; sourceTree = "<group>"; };
@@ -127,6 +135,7 @@
 				18CBE4FA21AD339E006C67CD /* meVC.swift */,
 				18CBE4FC21AD4284006C67CD /* createGroupVC.swift */,
 				18CBE50821AEA16E006C67CD /* groupFeedVC.swift */,
+				187A1E6621B138C300865ABC /* profileVC.swift */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -136,6 +145,7 @@
 			children = (
 				18CBE4F821AC230C006C67CD /* message.swift */,
 				18CBE50421AE95C3006C67CD /* Group.swift */,
+				187A1E6821B14E3D00865ABC /* profileImage.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -149,6 +159,8 @@
 				18CBE50021AD5389006C67CD /* userCell.swift */,
 				18CBE50221AE91D8006C67CD /* groupCell.swift */,
 				18CBE50621AEA13A006C67CD /* groupFeedCell.swift */,
+				187A1E6221B1144200865ABC /* meCell.swift */,
+				187A1E6421B1389800865ABC /* imageCell.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -200,6 +212,7 @@
 				18CBE4C321A6C8CD006C67CD /* Frameworks */,
 				18CBE4C421A6C8CD006C67CD /* Resources */,
 				62435ACA0D2815581D6A9E06 /* [CP] Embed Pods Frameworks */,
+				A9415EC11767C9DBF84D1DBC /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -265,14 +278,18 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-groupChat/Pods-groupChat-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
@@ -280,6 +297,28 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-groupChat/Pods-groupChat-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A9415EC11767C9DBF84D1DBC /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-groupChat/Pods-groupChat-resources.sh",
+				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleSignIn.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-groupChat/Pods-groupChat-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		D298D5D4E5CC03651357B914 /* [CP] Check Pods Manifest.lock */ = {
@@ -311,19 +350,23 @@
 				18CBE4F721AC201D006C67CD /* feedCell.swift in Sources */,
 				18CBE50321AE91D8006C67CD /* groupCell.swift in Sources */,
 				18CBE4F921AC230C006C67CD /* message.swift in Sources */,
+				187A1E6721B138C300865ABC /* profileVC.swift in Sources */,
 				18CBE4FD21AD4284006C67CD /* createGroupVC.swift in Sources */,
 				18CBE4EB21A7CC4E006C67CD /* insetTextField.swift in Sources */,
 				18CBE50921AEA16E006C67CD /* groupFeedVC.swift in Sources */,
+				187A1E6921B14E3D00865ABC /* profileImage.swift in Sources */,
 				18CBE4CE21A6C8CD006C67CD /* GroupVC.swift in Sources */,
 				18CBE4EF21A7DB42006C67CD /* AuthService.swift in Sources */,
 				18CBE4F521AC0F9F006C67CD /* UIviewExt.swift in Sources */,
 				18CBE50521AE95C3006C67CD /* Group.swift in Sources */,
+				187A1E6321B1144200865ABC /* meCell.swift in Sources */,
 				18CBE50721AEA13A006C67CD /* groupFeedCell.swift in Sources */,
 				18CBE50121AD5389006C67CD /* userCell.swift in Sources */,
 				18CBE4E921A7CA6F006C67CD /* LoginVC.swift in Sources */,
 				18CBE4FB21AD339E006C67CD /* meVC.swift in Sources */,
 				18CBE4ED21A7CC73006C67CD /* ShadowView.swift in Sources */,
 				18CBE4CA21A6C8CD006C67CD /* AppDelegate.swift in Sources */,
+				187A1E6521B1389800865ABC /* imageCell.swift in Sources */,
 				18CBE50B21AFF722006C67CD /* viewcontrollerExt.swift in Sources */,
 				18CBE4F321ABF2AB006C67CD /* createPostVC.swift in Sources */,
 				18CBE4CC21A6C8CD006C67CD /* FeedVC.swift in Sources */,

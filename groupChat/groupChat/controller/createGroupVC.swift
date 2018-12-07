@@ -86,7 +86,8 @@ extension createGroupVC : UITableViewDelegate , UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "userCell") as? userCell else {
             return UITableViewCell()
         }
-        let profileimage = UIImage(named: "defaultProfileImage")
+        let imagename = DataService.instance.getProfileImage()
+        let profileimage = UIImage(named: imagename)
         cell.configureCell(ProfileImg: profileimage!, email: emailArray[indexPath.row], isSelected: true)
         return cell
     }

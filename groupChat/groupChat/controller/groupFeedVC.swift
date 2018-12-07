@@ -17,6 +17,8 @@ class groupFeedVC: UIViewController {
     @IBOutlet weak var members: UILabel!
     @IBOutlet weak var grpTitle: UILabel!
     
+    @IBOutlet weak var bottomConstraint : NSLayoutConstraint!
+    
     var group : Group?
     var gropuMsgArray = [Message]()
     func initData(forGroup group: Group){
@@ -28,6 +30,35 @@ class groupFeedVC: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
       sendBtnView.bindToKeyboard()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboardNotification), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboardNotification), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    @objc func handleKeyboardNotification(_ notification: Notification) {
+        
+        if let userInfo = notification.userInfo {
+            
+            let keyboardFrame = (userInfo[UIResponder.keyboardFrameEndUserInfoKey] as AnyObject).cgRectValue
+            
+            let isKeyboardShowing = notification.name == UIResponder.keyboardWillShowNotification
+            
+            bottomConstraint?.constant = isKeyboardShowing ? -keyboardFrame!.height : 0
+            
+            UIView.animate(withDuration: 0.5, animations: { () -> Void in
+                self.view.layoutIfNeeded()
+            })
+        }
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        NotificationCenter.default.removeObserver(self)
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        self.sendBtnView.superview?.setNeedsLayout()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -83,7 +114,8 @@ extension groupFeedVC : UITableViewDelegate , UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "groupFeedCell") as? groupFeedCell else {return UITableViewCell()}
-        let image = UIImage(named: "defaultProfileImage")
+        let imagename = DataService.instance.getProfileImage()
+        let image = UIImage(named: imagename)
         DataService.instance.getUserName(forUID: gropuMsgArray[indexPath.row].senderId) { (email) in
             cell.configureCell(profileImg: image!, email: email, message: self.gropuMsgArray[indexPath.row].content)
         }
